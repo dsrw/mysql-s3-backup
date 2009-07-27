@@ -12,7 +12,7 @@ end
 
 def create_bucket
   require 'socket'
-  bucket = ENV["BUCKET"] || Socket.gethostname + "-backup"
+  bucket = config("backup_bucket") || Socket.gethostname + "-backup"
   AWS::S3::Bucket.create(bucket)
   bucket
 end
