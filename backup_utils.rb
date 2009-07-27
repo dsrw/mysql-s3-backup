@@ -18,11 +18,11 @@ def create_bucket
 end
 
 def dump_db(file)
-  sh "mysqldump -u root --password=#{config("mysql_root_password")} --all-databases > #{file}"
+  `mysqldump -u root --password=#{config("mysql_root_password")} --all-databases > #{file}`
 end
 
 def load_db(file)
-  sh "mysql -u root --password=#{config("mysql_root_password")} < #{file}"
+  `mysql -u root --password=#{config("mysql_root_password")} < #{file}`
 end
 
 def full_file
