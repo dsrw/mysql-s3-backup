@@ -1,0 +1,10 @@
+Perform a full or delta backup of your entire mysql database to S3.
+
+Requires a UNIX like environment with xdelta3 and bzip2 installed.
+
+Run as a standard user.  Requires the file ~/.server_config in the following format:
+
+s3_key: 
+s3_secret: 
+mysql_root_password: 
+days_between_full_backups: 14
