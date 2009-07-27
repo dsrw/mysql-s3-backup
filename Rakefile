@@ -26,7 +26,7 @@ end
 
 desc "Performs a full or delta backup"
 task :backup do
-  if full_file && parse_time(full_file) > config("days_between_full_backups").days.ago && verify_upload(full_file)
+  if full_file && parse_time(full_file) > config("days_between_full_backups").to_i.days.ago && verify_upload(full_file)
     Rake::Task["delta_backup"].invoke
   else
     Rake::Task["full_backup"].invoke
