@@ -49,6 +49,6 @@ end
 
 def config(key)
   require 'yaml'
-  YAML.parse(`cat ~/.server_config`)[key].value
+  YAML.parse(`cat ~/.server_config`)[key].value rescue nil
 end
 
